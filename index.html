@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hair Buzl（ヘアーバズール）| 旭川市の美容室・プライベートサロン</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- フォントの追加: Noto Sans(基本), Noto Serif(日本語見出し), Cormorant Garamond(英字アクセント) -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -32,22 +31,20 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
-        /* ヒーロー画像のパララックスとオーバーレイ */
         .hero-image {
-            background-image: linear-gradient(rgba(40, 35, 30, 0.4), rgba(40, 35, 30, 0.6)), url('hero.jpg');
+            /* ★変更：文字がなくなったため、写真本来の明るさが出るようにフィルターを薄くしました（上部のみメニュー視認性のために影を残しています） */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 30%), url('hero.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
 
-        /* 縦書きスタイル */
         .vertical-text {
             writing-mode: vertical-rl;
             text-orientation: upright;
             letter-spacing: 0.2em;
         }
 
-        /* スクロールアニメーション用のクラス */
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
@@ -59,15 +56,12 @@
             transform: translateY(0);
         }
 
-        /* ディレイ用のクラス */
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
 
-        /* スムーススクロール */
         html { scroll-behavior: smooth; }
 
-        /* 装飾的な線 */
         .deco-line::after {
             content: '';
             display: block;
@@ -76,6 +70,14 @@
             background-color: var(--color-secondary);
             margin: 20px auto 0;
             opacity: 0.5;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 2s ease-out forwards;
         }
     </style>
 </head>
@@ -129,18 +131,10 @@
         </div>
     </header>
 
-    <!-- ヒーローセクション -->
+    <!-- ヒーローセクション（★変更：文字なし・写真メインの洗練版） -->
     <section class="hero-image h-screen flex items-center justify-center px-4 relative">
-        <div class="z-10 text-center mt-20">
-            <h1 class="text-4xl md:text-6xl text-white font-serif-jp font-light mb-8 tracking-[0.15em] leading-[1.8] opacity-0 animate-[fadeIn_2s_ease-out_forwards]">
-                髪と心に、<br class="md:hidden">新しい扉を。
-            </h1>
-            <p class="text-sm md:text-base text-stone-300 mb-12 font-light tracking-[0.2em] uppercase opacity-0 animate-[fadeIn_2s_ease-out_0.5s_forwards]">
-                Private Hair Salon in Asahikawa
-            </p>
-        </div>
-        <!-- スクロールダウンインジケーター -->
-        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-0 animate-[fadeIn_2s_ease-out_1s_forwards]">
+        <!-- スクロールダウンインジケーター（フワッと表示されます） -->
+        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-0 animate-fade-in" style="animation-delay: 0.5s;">
             <span class="text-white/70 text-xs font-elegant tracking-widest mb-4">Scroll</span>
             <div class="w-[1px] h-16 bg-gradient-to-b from-white/70 to-transparent"></div>
         </div>
@@ -148,41 +142,31 @@
 
     <!-- Concept セクション -->
     <section id="concept" class="py-32 px-6 lg:px-12 relative overflow-hidden">
-        <!-- 背景の装飾文字 -->
         <div class="absolute top-10 left-[-5%] text-[15rem] font-elegant text-stone-100 opacity-50 z-0 pointer-events-none select-none">
             Concept
         </div>
         
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
-                
-                <!-- 縦書きのキャッチコピー -->
                 <div class="hidden lg:block w-auto fade-in-up">
                     <h2 class="vertical-text text-2xl lg:text-3xl font-serif-jp text-stone-800 leading-loose h-[500px]">
                         お互いに笑顔になれる、<br>そんなお店を作りたい。
                     </h2>
                 </div>
-
-                <!-- 写真 -->
                 <div class="w-full lg:w-5/12 relative fade-in-up delay-100">
                     <div class="aspect-[4/5] overflow-hidden rounded-sm relative">
                         <img src="concept.jpg" alt="Salon Interior" class="w-full h-full object-cover transition-transform duration-[10s] hover:scale-105">
                     </div>
-                    <!-- 装飾枠 -->
                     <div class="absolute -bottom-6 -right-6 w-full h-full border border-stone-300 -z-10"></div>
                 </div>
-
-                <!-- テキスト -->
                 <div class="w-full lg:w-5/12 fade-in-up delay-200">
                     <div class="mb-12">
                         <p class="text-stone-400 font-elegant tracking-[0.3em] uppercase text-sm mb-2">Our Concept</p>
                         <h2 class="text-4xl font-elegant text-stone-800 tracking-wider">Hair Buzl</h2>
                     </div>
-                    
                     <h3 class="lg:hidden text-xl font-serif-jp text-stone-800 leading-relaxed mb-8 text-center">
                         お互いに笑顔になれる、<br>そんなお店を作りたい。
                     </h3>
-
                     <div class="text-stone-600 leading-[2.2] font-light text-sm md:text-base text-justify space-y-6">
                         <p>
                             「白髪が出てきた」「ボリュームがなくなってきた」「クセが強くなってきた」「ヘアスタイルを変えて1歳でも若くなりたい」<br>
@@ -202,8 +186,8 @@
         </div>
     </section>
 
-    <!-- Menu セクション -->
-    <section id="menu" class="py-32 px-6 lg:px-12 bg-white">
+    <!-- Menu セクション（タブ分割削除・シンプル統合版） -->
+    <section id="menu" class="py-32 px-6 lg:px-12 bg-white scroll-mt-12">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-24 fade-in-up">
                 <p class="text-stone-400 font-elegant tracking-[0.3em] uppercase text-sm mb-2">Service</p>
@@ -212,7 +196,6 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-16 lg:gap-x-24 lg:gap-y-20">
-                
                 <!-- 1. Cut -->
                 <div class="fade-in-up delay-100">
                     <h3 class="text-2xl font-elegant text-stone-800 border-b border-stone-200 pb-4 mb-8 tracking-widest flex items-center">
@@ -404,7 +387,7 @@
                         </li>
                         <li class="group">
                             <div class="flex justify-between items-baseline mb-2">
-                                <span class="text-stone-800 font-medium tracking-wide">特殊パーマ <span class="text-xs text-stone-500 font-normal ml-1">スパイラル・ツイスト</span></span>
+                                <span class="text-stone-800 font-medium tracking-wide">特殊パーマ <span class="text-xs text-stone-500 font-normal ml-1">スパイラル・ツイスト等</span></span>
                                 <div class="flex-grow border-b border-dotted border-stone-300 mx-4 opacity-50"></div>
                                 <span class="text-lg font-serif-jp tracking-wider">¥11,000</span>
                             </div>
@@ -416,7 +399,7 @@
                     </ul>
                 </div>
 
-                <!-- 4. Treatment & Spa -->
+                <!-- 4. Treatment & Care -->
                 <div class="fade-in-up delay-200">
                     <h3 class="text-2xl font-elegant text-stone-800 border-b border-stone-200 pb-4 mb-8 tracking-widest flex items-center">
                         <span class="w-1.5 h-1.5 rounded-full bg-stone-300 mr-3"></span>Treatment & Care
@@ -468,7 +451,6 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
             
             <div class="text-center mt-24 fade-in-up delay-300">
@@ -489,49 +471,37 @@
                 <p class="mt-8 text-sm text-stone-600 tracking-widest leading-relaxed">木の温もりと、穏やかな時間が流れるプライベート空間。</p>
             </div>
 
-            <!-- ギャラリーグリッド -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                
-                <!-- 写真1：カットスペース (photo1がないため、一覧にあったphoto8に変更しました) -->
                 <div class="aspect-[4/3] overflow-hidden rounded-sm group fade-in-up delay-100 shadow-sm relative">
                     <img src="photo8.jpg" alt="カットスペース" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
                         <span class="text-white text-sm tracking-widest font-light">Cut Space</span>
                     </div>
                 </div>
-                
-                <!-- 写真2：受付・ウェルカムボード -->
                 <div class="aspect-[4/3] overflow-hidden rounded-sm group fade-in-up delay-200 shadow-sm relative">
                     <img src="photo2.jpg" alt="ウェルカムボード" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
                         <span class="text-white text-sm tracking-widest font-light">Reception</span>
                     </div>
                 </div>
-
-                <!-- 写真3：シャンプースペース -->
                 <div class="aspect-[4/3] overflow-hidden rounded-sm group fade-in-up delay-300 shadow-sm relative">
                     <img src="photo3.jpg" alt="シャンプースペース" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
                         <span class="text-white text-sm tracking-widest font-light">Shampoo Station</span>
                     </div>
                 </div>
-
-                <!-- 写真4：商品棚とグリーン -->
                 <div class="aspect-[4/3] overflow-hidden rounded-sm group fade-in-up delay-100 shadow-sm relative lg:col-span-1 md:col-span-2">
                     <img src="photo4.jpg" alt="ディスプレイ" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
                         <span class="text-white text-sm tracking-widest font-light">Display</span>
                     </div>
                 </div>
-                
-                <!-- 写真5：待合チェア -->
                 <div class="aspect-[4/3] md:aspect-auto overflow-hidden rounded-sm group fade-in-up delay-200 shadow-sm relative lg:col-span-2 md:col-span-2">
                     <img src="photo5.jpg" alt="待合スペース" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" style="object-position: center 30%;">
                     <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
                         <span class="text-white text-sm tracking-widest font-light">Waiting Space</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -550,8 +520,8 @@
                 <div class="w-full md:w-2/5 flex flex-col items-center">
                     <div class="relative w-64 h-64 md:w-72 md:h-72 mb-8">
                         <div class="absolute inset-0 border border-stone-400 transform translate-x-4 translate-y-4 rounded-full"></div>
-                        <!-- ★フォルダにあるオーナー様のお写真(photo25)に変更しました -->
-                        <img src="photo25.jpg" alt="Owner Stylist" class="relative z-10 w-full h-full object-cover rounded-full shadow-lg grayscale hover:grayscale-0 transition duration-500">
+                        <!-- ★オーナー様の正式なお写真が来るまでの仮写真（日本のプライベートサロンらしい清潔感のある手元写真に変更） -->
+                        <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Stylist Hands" class="relative z-10 w-full h-full object-cover rounded-full shadow-lg grayscale hover:grayscale-0 transition duration-500">
                     </div>
                     <div class="text-center">
                         <p class="text-xs text-stone-500 font-elegant tracking-[0.2em] mb-2">Owner Stylist</p>
@@ -569,8 +539,6 @@
                     <p>
                         美容師になり12年が経ち、僕と同じようにそれぞれの方が毛髪に悩みを抱えていることを強く感じ、少しでもそのお役に立てればと考えています。
                     </p>
-                    
-                    <!-- 縮毛矯正への情熱ブロック -->
                     <div class="bg-stone-50 border-l-4 border-stone-400 p-6 md:p-8 mt-8 rounded-r-lg shadow-sm">
                         <h4 class="text-lg font-serif-jp text-stone-800 mb-4 tracking-wider">縮毛矯正への並々ならぬ熱意</h4>
                         <p class="text-sm leading-relaxed">
@@ -579,7 +547,6 @@
                             決して料金は安くありませんが、仕上がりへの絶対的なこだわりからきております。今までに失敗の過去がある方でも、ぜひ一度ご相談ください。
                         </p>
                     </div>
-                    
                     <p class="text-center font-medium text-stone-700 mt-8">
                         みなさまとお会いできることを楽しみにしています。<br>心よりお待ちしております！
                     </p>
@@ -597,8 +564,6 @@
             </div>
 
             <div class="grid lg:grid-cols-12 gap-0 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] rounded-sm overflow-hidden fade-in-up delay-100 bg-white">
-                
-                <!-- 店舗情報 (左側) -->
                 <div class="lg:col-span-5 p-10 md:p-16 flex flex-col justify-center">
                     <h3 class="text-3xl font-elegant text-stone-800 tracking-wider mb-2">Hair Buzl</h3>
                     <p class="text-xs text-stone-500 tracking-widest mb-10">ヘアーバズール</p>
@@ -640,9 +605,7 @@
                     </ul>
                 </div>
 
-                <!-- Google Map (右側) -->
                 <div class="lg:col-span-7 h-[400px] lg:h-auto w-full filter grayscale hover:grayscale-0 transition duration-1000">
-                    <!-- ★最も安全で確実なGoogleマップの埋め込みコードに変更しました -->
                     <iframe src="https://maps.google.co.jp/maps?output=embed&q=北海道旭川市東光5条6丁目3番5号" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
@@ -658,7 +621,6 @@
             
             <div class="flex justify-center space-x-10 mb-16">
                 <a href="https://reserve.kokoro-door.net" target="_blank" class="text-xs font-elegant tracking-widest text-stone-400 hover:text-white transition duration-300">Reservation</a>
-                <!-- ★ここにInstagramのURLを入れます。target="_blank"で別タブで開くようにしました -->
                 <a href="https://www.instagram.com/hair_buzl/" target="_blank" class="text-xs font-elegant tracking-widest text-stone-400 hover:text-white transition duration-300">Instagram</a>
                 <a href="tel:0166378631" class="text-xs font-elegant tracking-widest text-stone-400 hover:text-white transition duration-300">Contact</a>
             </div>
@@ -668,7 +630,7 @@
         </div>
     </footer>
 
-    <!-- フローティング予約ボタン（モバイル・PC共通：スクロールで出現） -->
+    <!-- フローティング予約ボタン -->
     <div id="floating-btn" class="fixed bottom-6 right-6 z-40 opacity-0 transform translate-y-4 transition-all duration-500 pointer-events-none">
         <a href="https://reserve.kokoro-door.net" target="_blank" class="flex items-center justify-center w-16 h-16 md:w-auto md:h-auto md:px-8 md:py-4 bg-stone-800 text-white rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:bg-stone-700 hover:scale-105 transition duration-300">
             <i class="fa-regular fa-calendar-check text-xl md:mr-3"></i>
@@ -676,11 +638,9 @@
         </a>
     </div>
 
-    <!-- JavaScript -->
+    <!-- JavaScript（不要なメニュー切り替えロジックを完全に削除しました） -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
-            // 1. スクロールアニメーション (Intersection Observer)
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
@@ -700,7 +660,6 @@
                 observer.observe(el);
             });
 
-            // 2. ヘッダーの背景変化 ＆ フローティングボタンの出現
             const header = document.getElementById('header');
             const logoImg = document.getElementById('logo-img');
             const navLinks = document.querySelectorAll('.nav-link');
@@ -710,7 +669,6 @@
 
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
-                    // ヘッダーを白くする
                     header.classList.add('bg-white/95', 'backdrop-blur-sm', 'shadow-sm');
                     header.classList.remove('bg-transparent', 'py-4');
                     logoImg.classList.remove('invert', 'brightness-0'); 
@@ -725,10 +683,8 @@
                     navBtn.classList.replace('hover:text-stone-900', 'hover:text-white');
                     mobileBtnIcon.classList.replace('text-white', 'text-stone-800');
                     
-                    // フローティングボタンを表示
                     floatingBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
                 } else {
-                    // 透明に戻す
                     header.classList.remove('bg-white/95', 'backdrop-blur-sm', 'shadow-sm');
                     header.classList.add('bg-transparent', 'py-4');
                     logoImg.classList.add('invert', 'brightness-0');
@@ -743,12 +699,10 @@
                     navBtn.classList.replace('hover:text-white', 'hover:text-stone-900');
                     mobileBtnIcon.classList.replace('text-stone-800', 'text-white');
                     
-                    // フローティングボタンを隠す
                     floatingBtn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
                 }
             });
 
-            // 3. モバイルメニューの開閉 (フェードイン対応)
             const mobileBtn = document.getElementById('mobile-menu-btn');
             const closeBtn = document.getElementById('mobile-close-btn');
             const mobileMenu = document.getElementById('mobile-menu');
