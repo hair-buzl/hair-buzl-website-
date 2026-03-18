@@ -28,7 +28,8 @@
         .font-elegant { font-family: 'Cormorant Garamond', serif; }
 
         .hero-image {
-            background-image: linear-gradient(rgba(40, 35, 30, 0.4), rgba(40, 35, 30, 0.5)), url('hero.jpg');
+            /* 日本の清潔感のあるサロンイメージ（仮） */
+            background-image: linear-gradient(rgba(40, 35, 30, 0.3), rgba(40, 35, 30, 0.4)), url('https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&q=80&w=1600');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -77,8 +78,9 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0 flex items-center h-full">
-                    <a href="#" class="h-10 md:h-12 inline-block">
-                        <img src="logo.png" alt="Hair Buzl" class="h-full object-contain filter invert brightness-0" id="logo-img">
+                    <a href="#" class="h-12 md:h-16 inline-block">
+                        <img src="logo.png" alt="Hair Buzl" class="h-full object-contain filter invert brightness-0" id="logo-img" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
+                        <span id="alt-logo" class="hidden font-elegant text-2xl tracking-widest text-white">Buzl</span>
                     </a>
                 </div>
                 <nav class="hidden md:flex space-x-8 items-center">
@@ -86,7 +88,8 @@
                     <a href="#menu" class="text-sm font-elegant tracking-widest text-white hover:text-stone-300 transition nav-link">Menu</a>
                     <a href="#stylist" class="text-sm font-elegant tracking-widest text-white hover:text-stone-300 transition nav-link">Stylist</a>
                     <a href="#access" class="text-sm font-elegant tracking-widest text-white hover:text-stone-300 transition nav-link">Access</a>
-                    <a href="https://liff.line.me/2009490735-CeR6MCED" class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-stone-900 transition nav-btn font-bold">
+                    
+                    <a href="https://script.google.com/macros/s/AKfycbwheghSBC8E2-B7nW0Zz5AIc1tY9tnspoozjd3DV4RThr3jcdt0lofWQCVaz6ZXW32zlw/exec" class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-stone-900 transition nav-btn font-bold">
                         Reservation
                     </a>
                 </nav>
@@ -103,7 +106,8 @@
                 <a href="#menu" class="text-2xl font-elegant tracking-widest text-stone-300 uppercase">Menu</a>
                 <a href="#stylist" class="text-2xl font-elegant tracking-widest text-stone-300 uppercase">Stylist</a>
                 <a href="#access" class="text-2xl font-elegant tracking-widest text-stone-300 uppercase">Access</a>
-                <a href="https://liff.line.me/2009490735-CeR6MCED" class="mt-8 bg-white text-stone-900 px-10 py-3 text-lg font-bold tracking-wider uppercase">Web Reservation</a>
+                
+                <a href="https://script.google.com/macros/s/AKfycbwheghSBC8E2-B7nW0Zz5AIc1tY9tnspoozjd3DV4RThr3jcdt0lofWQCVaz6ZXW32zlw/exec" class="mt-8 bg-white text-stone-900 px-10 py-3 text-lg font-bold tracking-wider uppercase">Web Reservation</a>
             </div>
         </div>
     </header>
@@ -129,7 +133,8 @@
             </div>
             <div class="w-full lg:w-5/12 relative fade-in-up">
                 <div class="aspect-[4/5] overflow-hidden shadow-2xl">
-                    <img src="photo21.jpg" alt="Interior" class="w-full h-full object-cover">
+                    <!-- 落ち着いたサロン空間イメージ -->
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=800" alt="Interior" class="w-full h-full object-cover">
                 </div>
                 <div class="absolute -bottom-8 -right-8 w-full h-full border border-stone-200 -z-10"></div>
             </div>
@@ -147,7 +152,7 @@
         </div>
     </section>
 
-    <!-- Menu (全20項目網羅) -->
+    <!-- Menu -->
     <section id="menu" class="py-32 px-6 lg:px-12 bg-stone-50">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-24 fade-in-up">
@@ -250,7 +255,7 @@
                     <ul class="space-y-10">
                         <li>
                             <div class="flex justify-between items-baseline mb-2">
-                                <span class="text-sm font-medium">フルボ酸配合 艶髪縮毛矯正 <small class="text-stone-400 font-normal ml-1">(カット込)</small></span><div class="menu-dot"></div><span class="font-serif-jp">¥16,500</span>
+                                <span class="text-sm font-medium text-stone-900">フルボ酸配合 艶髪縮毛矯正 <small class="text-stone-400 font-normal ml-1">(カット込)</small></span><div class="menu-dot"></div><span class="font-serif-jp">¥16,500</span>
                             </div>
                             <p class="text-[11px] text-stone-500 leading-relaxed">当店の看板メニュー。シルクのような柔らかい艶感を叶えます。<span class="ml-2 border border-stone-200 px-1 rounded">180分</span></p>
                         </li>
@@ -318,20 +323,20 @@
             
             <div class="mt-24 text-center">
                 <p class="text-[10px] text-stone-400 tracking-[0.1em] mb-12 max-w-lg mx-auto leading-relaxed">※カラー・パーマ・矯正メニューは、髪の長さによりロング料金(¥500〜¥1,000)を頂戴する場合がございます。詳細は予約画面にてご確認ください。</p>
-                <a href="https://liff.line.me/2009490735-CeR6MCED" class="inline-block bg-stone-800 text-white px-16 py-5 rounded-full font-bold tracking-widest hover:scale-105 transition shadow-2xl text-xs uppercase">
+                
+                <a href="https://script.google.com/macros/s/AKfycbwheghSBC8E2-B7nW0Zz5AIc1tY9tnspoozjd3DV4RThr3jcdt0lofWQCVaz6ZXW32zlw/exec" class="inline-block bg-stone-800 text-white px-16 py-5 rounded-full font-bold tracking-widest hover:scale-105 transition shadow-2xl text-xs uppercase">
                     Check Reservation / 空き状況を確認して予約する
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Stylist Section (オーナー写真を道具のイメージへ・装飾維持) -->
+    <!-- Stylist Section -->
     <section id="stylist" class="py-32 px-6 lg:px-12 bg-white">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
             <div class="relative w-64 h-64 shrink-0 fade-in-up">
-                <!-- 写真の周りの細い円装飾を維持 -->
                 <div class="absolute inset-0 border border-stone-300 rounded-full scale-110 -z-10"></div>
-                <!-- こだわりの道具（ハサミ）のイメージ画像 -->
+                <!-- 谷口さんの写真ではなく、プロの道具（ハサミ）のイメージ画像 -->
                 <img src="https://images.unsplash.com/photo-1521590832167-7bfc1748b565?auto=format&fit=crop&q=80&w=800" alt="Professional Tools" class="w-full h-full object-cover rounded-full shadow-2xl">
             </div>
             <div class="fade-in-up text-center md:text-left">
@@ -394,9 +399,9 @@
 
     <footer class="bg-stone-900 py-20 text-center">
         <div class="max-w-7xl mx-auto px-6 text-white">
-            <img src="logo.png" alt="Hair Buzl" class="h-10 mx-auto filter invert mb-16 brightness-0" onerror="this.style.display='none'">
+            <h2 class="text-3xl font-elegant tracking-widest mb-16 opacity-80">Hair Buzl</h2>
             <div class="flex justify-center space-x-14 mb-16 text-stone-500 text-[10px] tracking-[0.4em] uppercase font-bold">
-                <a href="https://liff.line.me/2009490735-CeR6MCED" class="hover:text-white transition">Reservation</a>
+                <a href="https://script.google.com/macros/s/AKfycbwheghSBC8E2-B7nW0Zz5AIc1tY9tnspoozjd3DV4RThr3jcdt0lofWQCVaz6ZXW32zlw/exec" class="hover:text-white transition">Reservation</a>
                 <a href="https://www.instagram.com/hair_buzl/" target="_blank" class="hover:text-white transition">Instagram</a>
             </div>
             <p class="text-[9px] text-stone-700 tracking-[0.5em] uppercase font-light">&copy; Hair Buzl. All Rights Reserved.</p>
@@ -404,7 +409,7 @@
     </footer>
 
     <div id="floating-btn" class="fixed bottom-8 right-8 z-40 opacity-0 translate-y-4 transition-all duration-700 pointer-events-none">
-        <a href="https://liff.line.me/2009490735-CeR6MCED" class="flex items-center justify-center bg-stone-800 text-white px-8 py-5 rounded-full shadow-2xl hover:scale-105 transition tracking-[0.2em] text-[10px] font-bold uppercase">
+        <a href="https://script.google.com/macros/s/AKfycbwheghSBC8E2-B7nW0Zz5AIc1tY9tnspoozjd3DV4RThr3jcdt0lofWQCVaz6ZXW32zlw/exec" class="flex items-center justify-center bg-stone-800 text-white px-8 py-5 rounded-full shadow-2xl hover:scale-105 transition tracking-[0.2em] text-[10px] font-bold uppercase">
             <i class="fa-regular fa-calendar-check mr-4 text-lg"></i> Web Reservation
         </a>
     </div>
@@ -418,6 +423,7 @@
 
             const header = document.getElementById('header');
             const logoImg = document.getElementById('logo-img');
+            const altLogo = document.getElementById('alt-logo');
             const navLinks = document.querySelectorAll('.nav-link');
             const navBtn = document.querySelector('.nav-btn');
             const floatingBtn = document.getElementById('floating-btn');
@@ -428,8 +434,15 @@
                 header.classList.toggle('shadow-sm', scrolled);
                 header.classList.toggle('py-2', scrolled);
                 header.classList.toggle('py-4', !scrolled);
-                logoImg.classList.toggle('invert', !scrolled);
-                logoImg.classList.toggle('brightness-0', !scrolled);
+                
+                if (logoImg.style.display !== 'none') {
+                    logoImg.classList.toggle('invert', !scrolled);
+                    logoImg.classList.toggle('brightness-0', !scrolled);
+                } else {
+                    altLogo.classList.toggle('text-white', !scrolled);
+                    altLogo.classList.toggle('text-stone-800', scrolled);
+                }
+
                 navLinks.forEach(link => {
                     link.classList.toggle('text-stone-600', scrolled);
                     link.classList.toggle('text-white', !scrolled);
