@@ -28,8 +28,8 @@
         .font-elegant { font-family: 'Cormorant Garamond', serif; }
 
         .hero-image {
-            /* 日本の清潔感のあるサロンイメージ（仮） */
-            background-image: linear-gradient(rgba(40, 35, 30, 0.3), rgba(40, 35, 30, 0.4)), url('https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&q=80&w=1600');
+            /* GitHubリポジトリ内の hero.jpg を使用 */
+            background-image: linear-gradient(rgba(40, 35, 30, 0.3), rgba(40, 35, 30, 0.4)), url('hero.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -79,6 +79,7 @@
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0 flex items-center h-full">
                     <a href="#" class="h-12 md:h-16 inline-block">
+                        <!-- logo.png を使用 -->
                         <img src="logo.png" alt="Hair Buzl" class="h-full object-contain filter invert brightness-0" id="logo-img" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
                         <span id="alt-logo" class="hidden font-elegant text-2xl tracking-widest text-white">Buzl</span>
                     </a>
@@ -89,6 +90,7 @@
                     <a href="#stylist" class="text-sm font-elegant tracking-widest text-white hover:text-stone-300 transition nav-link">Stylist</a>
                     <a href="#access" class="text-sm font-elegant tracking-widest text-white hover:text-stone-300 transition nav-link">Access</a>
                     
+                    <!-- 予約ボタンのリンク先 (GASのURL) -->
                     <a href="https://script.google.com/macros/s/AKfycbwheghSBC8E2-B7nW0Zz5AIc1tY9tnspoozjd3DV4RThr3jcdt0lofWQCVaz6ZXW32zlw/exec" class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-stone-900 transition nav-btn font-bold">
                         Reservation
                     </a>
@@ -133,8 +135,8 @@
             </div>
             <div class="w-full lg:w-5/12 relative fade-in-up">
                 <div class="aspect-[4/5] overflow-hidden shadow-2xl">
-                    <!-- 落ち着いたサロン空間イメージ -->
-                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=800" alt="Interior" class="w-full h-full object-cover">
+                    <!-- GitHubリポジトリ内の concept.jpg を使用 -->
+                    <img src="concept.jpg" alt="Interior" class="w-full h-full object-cover">
                 </div>
                 <div class="absolute -bottom-8 -right-8 w-full h-full border border-stone-200 -z-10"></div>
             </div>
@@ -336,8 +338,8 @@
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
             <div class="relative w-64 h-64 shrink-0 fade-in-up">
                 <div class="absolute inset-0 border border-stone-300 rounded-full scale-110 -z-10"></div>
-                <!-- 谷口さんの写真ではなく、プロの道具（ハサミ）のイメージ画像 -->
-                <img src="https://images.unsplash.com/photo-1521590832167-7bfc1748b565?auto=format&fit=crop&q=80&w=800" alt="Professional Tools" class="w-full h-full object-cover rounded-full shadow-2xl">
+                <!-- photo2.jpg を使用 (店舗イメージ/道具のイメージとして) -->
+                <img src="photo2.jpg" alt="Professional Tools" class="w-full h-full object-cover rounded-full shadow-2xl">
             </div>
             <div class="fade-in-up text-center md:text-left">
                 <p class="text-stone-400 font-elegant tracking-widest text-[11px] mb-3 uppercase">Owner Stylist</p>
@@ -399,7 +401,8 @@
 
     <footer class="bg-stone-900 py-20 text-center">
         <div class="max-w-7xl mx-auto px-6 text-white">
-            <h2 class="text-3xl font-elegant tracking-widest mb-16 opacity-80">Hair Buzl</h2>
+            <!-- logo.png を使用 -->
+            <img src="logo.png" alt="Hair Buzl" class="h-10 mx-auto filter invert mb-16 brightness-0" onerror="this.style.display='none'">
             <div class="flex justify-center space-x-14 mb-16 text-stone-500 text-[10px] tracking-[0.4em] uppercase font-bold">
                 <a href="https://script.google.com/macros/s/AKfycbwheghSBC8E2-B7nW0Zz5AIc1tY9tnspoozjd3DV4RThr3jcdt0lofWQCVaz6ZXW32zlw/exec" class="hover:text-white transition">Reservation</a>
                 <a href="https://www.instagram.com/hair_buzl/" target="_blank" class="hover:text-white transition">Instagram</a>
@@ -423,7 +426,6 @@
 
             const header = document.getElementById('header');
             const logoImg = document.getElementById('logo-img');
-            const altLogo = document.getElementById('alt-logo');
             const navLinks = document.querySelectorAll('.nav-link');
             const navBtn = document.querySelector('.nav-btn');
             const floatingBtn = document.getElementById('floating-btn');
@@ -434,15 +436,8 @@
                 header.classList.toggle('shadow-sm', scrolled);
                 header.classList.toggle('py-2', scrolled);
                 header.classList.toggle('py-4', !scrolled);
-                
-                if (logoImg.style.display !== 'none') {
-                    logoImg.classList.toggle('invert', !scrolled);
-                    logoImg.classList.toggle('brightness-0', !scrolled);
-                } else {
-                    altLogo.classList.toggle('text-white', !scrolled);
-                    altLogo.classList.toggle('text-stone-800', scrolled);
-                }
-
+                logoImg.classList.toggle('invert', !scrolled);
+                logoImg.classList.toggle('brightness-0', !scrolled);
                 navLinks.forEach(link => {
                     link.classList.toggle('text-stone-600', scrolled);
                     link.classList.toggle('text-white', !scrolled);
