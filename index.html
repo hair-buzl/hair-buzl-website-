@@ -114,7 +114,6 @@
                     <a href="#stylist" class="text-sm font-elegant tracking-widest text-white hover:text-stone-300 transition nav-link">Stylist</a>
                     <a href="#access" class="text-sm font-elegant tracking-widest text-white hover:text-stone-300 transition nav-link">Access</a>
                     
-                    <!-- ① ヘッダー予約ボタン -->
                     <a href="https://script.google.com/macros/s/AKfycbxQxy5peCVVYvOJuvZC-Wckb52kbihCf4u-MrS0-G4K6T3jl0l9SOl0irnJgkidkoBJvQ/exec" id="nav-btn" class="border-2 border-white text-white px-8 py-2.5 text-sm hover:bg-white hover:text-stone-900 transition btn-reservation font-bold rounded-sm">
                         Reservation
                     </a>
@@ -134,7 +133,6 @@
                 <a href="#stylist" class="text-2xl font-elegant tracking-widest text-stone-300 uppercase">Stylist</a>
                 <a href="#access" class="text-2xl font-elegant tracking-widest text-stone-300 uppercase">Access</a>
                 
-                <!-- ② スマホメニュー内ボタン -->
                 <a href="https://script.google.com/macros/s/AKfycbxQxy5peCVVYvOJuvZC-Wckb52kbihCf4u-MrS0-G4K6T3jl0l9SOl0irnJgkidkoBJvQ/exec" class="mt-8 bg-white text-stone-900 px-10 py-3 text-lg font-bold tracking-wider uppercase rounded-sm">Web Reservation</a>
             </div>
         </div>
@@ -189,6 +187,7 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-x-16 gap-y-24">
+                <!-- 1. Cut -->
                 <div class="fade-in-up">
                     <h3 class="text-xl font-serif-jp text-stone-800 border-b border-stone-200 pb-5 mb-10 tracking-widest flex items-center italic">
                         <span class="w-1 h-1 bg-stone-400 rounded-full mr-4"></span>Hair Cut
@@ -221,6 +220,7 @@
                     </ul>
                 </div>
 
+                <!-- 2. Color -->
                 <div class="fade-in-up delay-100">
                     <h3 class="text-xl font-serif-jp text-stone-800 border-b border-stone-200 pb-5 mb-10 tracking-widest flex items-center italic">
                         <span class="w-1 h-1 bg-stone-400 rounded-full mr-4"></span>Color Design
@@ -238,11 +238,70 @@
                             </div>
                             <p class="text-[11px] text-stone-500 leading-relaxed">生え際2cm以内。毛先の色と正確につなげます。<span class="ml-2 border border-stone-200 px-1 rounded">60分</span></p>
                         </li>
+                        <li>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <span class="text-sm font-medium">デザインカラー</span><div class="menu-dot"></div><span class="font-serif-jp">¥7,700〜</span>
+                            </div>
+                            <p class="text-[11px] text-stone-500 leading-relaxed">ハイライトやインナーカラーなど、立体感を演出。<span class="ml-2 border border-stone-200 px-1 rounded">120分</span></p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 3. Perm & Straight -->
+                <div class="fade-in-up">
+                    <h3 class="text-xl font-serif-jp text-stone-800 border-b border-stone-200 pb-5 mb-10 tracking-widest flex items-center italic">
+                        <span class="w-1 h-1 bg-stone-400 rounded-full mr-4"></span>Perm & Straight
+                    </h3>
+                    <ul class="space-y-10">
+                        <li>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <span class="text-sm font-medium">フルボ酸配合 艶髪縮毛矯正</span><div class="menu-dot"></div><span class="font-serif-jp">¥16,500</span>
+                            </div>
+                            <p class="text-[11px] text-stone-500 leading-relaxed">ダメージを最小限に。シルクのような手触りを。<span class="ml-2 border border-stone-200 px-1 rounded">180分</span></p>
+                        </li>
+                        <li>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <span class="text-sm font-medium">フルボ酸配合 艶髪パーマ</span><div class="menu-dot"></div><span class="font-serif-jp">¥9,900</span>
+                            </div>
+                            <p class="text-[11px] text-stone-500 leading-relaxed">カット込。柔らかく弾むようなカールを実現。<span class="ml-2 border border-stone-200 px-1 rounded">120分</span></p>
+                        </li>
+                        <li>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <span class="text-sm font-medium">セラミックスカール</span><div class="menu-dot"></div><span class="font-serif-jp">¥15,000</span>
+                            </div>
+                            <p class="text-[11px] text-stone-500 leading-relaxed">デジタルパーマ。形状記憶で朝のお手入れが楽に。<span class="ml-2 border border-stone-200 px-1 rounded">150分</span></p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 4. Care & Spa -->
+                <div class="fade-in-up delay-100">
+                    <h3 class="text-xl font-serif-jp text-stone-800 border-b border-stone-200 pb-5 mb-10 tracking-widest flex items-center italic">
+                        <span class="w-1 h-1 bg-stone-400 rounded-full mr-4"></span>Care & Spa
+                    </h3>
+                    <ul class="space-y-10">
+                        <li>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <span class="text-sm font-medium">酸熱トリートメント</span><div class="menu-dot"></div><span class="font-serif-jp">¥7,700</span>
+                            </div>
+                            <p class="text-[11px] text-stone-500 leading-relaxed">最先端ケア。髪の芯から補強し、驚きのツヤを。<span class="ml-2 border border-stone-200 px-1 rounded">90分</span></p>
+                        </li>
+                        <li>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <span class="text-sm font-medium">癒やしのヘッドスパ</span><div class="menu-dot"></div><span class="font-serif-jp">¥3,500</span>
+                            </div>
+                            <p class="text-[11px] text-stone-500 leading-relaxed">絶妙な力加減。健やかな頭皮環境を整えます。<span class="ml-2 border border-stone-200 px-1 rounded">30分</span></p>
+                        </li>
+                        <li>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <span class="text-sm font-medium">シャンプー・ブロー</span><div class="menu-dot"></div><span class="font-serif-jp">¥2,200</span>
+                            </div>
+                            <p class="text-[11px] text-stone-500 leading-relaxed">プロの技術で美しく整え、リフレッシュ。<span class="ml-2 border border-stone-200 px-1 rounded">30分</span></p>
+                        </li>
                     </ul>
                 </div>
             </div>
             
-            <!-- ③ 中盤の大きな予約ボタン -->
             <div class="mt-24 text-center">
                 <a href="https://script.google.com/macros/s/AKfycbxQxy5peCVVYvOJuvZC-Wckb52kbihCf4u-MrS0-G4K6T3jl0l9SOl0irnJgkidkoBJvQ/exec" class="inline-block bg-stone-800 text-white px-16 py-5 rounded-full font-bold tracking-widest hover:scale-105 transition shadow-2xl text-xs uppercase btn-reservation">
                     Check Reservation / 空き状況を確認して予約する
@@ -309,6 +368,21 @@
                             <span class="w-24 text-[10px] font-elegant uppercase tracking-widest text-stone-400">Tel</span>
                             <a href="tel:0166378631" class="text-lg font-bold text-stone-800 tracking-widest">0166-37-8631</a>
                         </li>
+                        <li class="flex items-start">
+                            <span class="w-24 text-[10px] font-elegant uppercase tracking-widest text-stone-400 pt-1">Opening</span>
+                            <div class="flex-1 space-y-4 text-sm font-light">
+                                <div class="flex justify-between max-w-xs border-b border-stone-100 pb-2">
+                                    <span>平日・土曜</span><span class="font-bold text-stone-800 uppercase">09:30 - 19:00</span>
+                                </div>
+                                <div class="flex justify-between max-w-xs border-b border-stone-100 pb-2">
+                                    <span>日曜・祝日</span><span class="font-bold text-stone-800 uppercase">09:30 - 18:00</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-24 text-[10px] font-elegant uppercase tracking-widest text-stone-400">Closed</span>
+                            <span class="text-sm text-red-500 font-bold tracking-widest">毎週月曜日 <span class="text-stone-400 font-normal text-[10px] ml-2">※その他不定休あり</span></span>
+                        </li>
                     </ul>
                 </div>
                 <div class="h-[450px] w-full rounded-sm overflow-hidden shadow-inner grayscale contrast-125 hover:grayscale-0 transition duration-1000">
@@ -322,7 +396,6 @@
         <div class="max-w-7xl mx-auto px-6 text-white">
             <img src="logo.png" alt="Hair Buzl" class="h-10 mx-auto filter invert mb-16 brightness-0" onerror="this.style.display='none'">
             <div class="flex justify-center space-x-14 mb-16 text-stone-500 text-[10px] tracking-[0.4em] uppercase font-bold">
-                <!-- ④ フッター予約リンク -->
                 <a href="https://script.google.com/macros/s/AKfycbxQxy5peCVVYvOJuvZC-Wckb52kbihCf4u-MrS0-G4K6T3jl0l9SOl0irnJgkidkoBJvQ/exec" class="hover:text-white transition">Reservation</a>
                 <a href="https://www.instagram.com/hair_buzl/" target="_blank" class="hover:text-white transition">Instagram</a>
             </div>
@@ -330,7 +403,6 @@
         </div>
     </footer>
 
-    <!-- ⑤ 右下フローティング予約ボタン -->
     <div id="floating-btn" class="fixed bottom-8 right-8 z-40 opacity-0 translate-y-4 transition-all duration-700 pointer-events-none">
         <a href="https://script.google.com/macros/s/AKfycbxQxy5peCVVYvOJuvZC-Wckb52kbihCf4u-MrS0-G4K6T3jl0l9SOl0irnJgkidkoBJvQ/exec" class="flex items-center justify-center bg-stone-800 text-white px-8 py-5 rounded-full shadow-2xl hover:scale-105 transition tracking-[0.2em] text-[10px] font-bold uppercase btn-reservation">
             <i class="fa-regular fa-calendar-check mr-4 text-lg"></i> Web Reservation
