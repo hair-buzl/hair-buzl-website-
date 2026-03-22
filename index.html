@@ -1,4 +1,234 @@
-<section id="access" class="py-32 px-6 lg:px-12 bg-[#f4f2f0]">
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Buzl（ヘアーバズール）| 旭川市の美容室・プライベートサロン</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --color-primary: #2c2c2c;
+            --color-secondary: #8c857b;
+            --color-bg: #fcfbf9;
+            --color-surface: #ffffff;
+            --color-accent: #ff7283;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--color-primary);
+            background-color: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, .font-serif-jp { font-family: 'Noto Serif JP', serif; }
+        .font-elegant { font-family: 'Cormorant Garamond', serif; }
+
+        .hero-image {
+            background-image: linear-gradient(rgba(40, 35, 30, 0.4), rgba(40, 35, 30, 0.5)), url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            letter-spacing: 0.2em;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        .deco-line::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 60px;
+            background-color: var(--color-secondary);
+            margin: 20px auto 0;
+            opacity: 0.5;
+        }
+
+        .menu-dot {
+            flex-grow: 1;
+            border-bottom: 1px dotted #ccc;
+            margin: 0 10px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header" class="fixed w-full z-50 transition-all duration-500 bg-transparent py-4">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center h-full">
+                    <a href="#" class="h-12 md:h-16 inline-block">
+                        <img src="logo.png" alt="Hair Buzl" class="h-full object-contain" id="logo-img">
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#concept" class="text-sm font-elegant tracking-widest text-white hover:text-stone-300 transition nav-link">Concept</a>
+                    <a href="#menu" class="text-sm font-elegant tracking-widest text-white hover:text-stone-300 transition nav-link">Menu</a>
+                    <a href="#stylist" class="text-sm font-elegant tracking-widest text-white hover:text-stone-300 transition nav-link">Stylist</a>
+                    <a href="#access" class="text-sm font-elegant tracking-widest text-white hover:text-stone-300 transition nav-link">Access</a>
+                    
+                    <a href="https://reserve.kokoro-door.net/" class="border border-white text-white px-6 py-2 text-sm hover:bg-white hover:text-stone-900 transition nav-btn font-bold">
+                        ネット予約
+                    </a>
+                </nav>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white focus:outline-none p-2 transition"><i class="fa-solid fa-bars text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="fixed inset-0 bg-stone-900/98 backdrop-blur-md z-40 hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300">
+            <button id="mobile-close-btn" class="absolute top-8 right-8 text-white text-3xl"><i class="fa-solid fa-xmark"></i></button>
+            <div class="flex flex-col items-center space-y-8">
+                <a href="#concept" class="text-2xl font-elegant tracking-widest text-stone-300 uppercase">Concept</a>
+                <a href="#menu" class="text-2xl font-elegant tracking-widest text-stone-300 uppercase">Menu</a>
+                <a href="#stylist" class="text-2xl font-elegant tracking-widest text-stone-300 uppercase">Stylist</a>
+                <a href="#access" class="text-2xl font-elegant tracking-widest text-stone-300 uppercase">Access</a>
+                
+                <a href="https://reserve.kokoro-door.net/" class="mt-8 bg-white text-stone-900 px-10 py-3 text-lg font-bold tracking-wider uppercase">ネット予約はこちら</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-image h-screen flex items-center justify-center px-4 relative">
+        <div class="z-10 text-center">
+            <h1 class="text-4xl md:text-6xl text-white font-serif-jp font-light mb-8 tracking-[0.2em] leading-relaxed">髪と心に、<br class="md:hidden">新しい扉を。</h1>
+            <p class="text-xs md:text-sm text-stone-300 mb-12 font-light tracking-[0.3em] uppercase">Private Hair Salon in Asahikawa</p>
+        </div>
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center">
+            <span class="text-white/60 text-[10px] font-elegant tracking-widest mb-4 uppercase">Scroll</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-white/60 to-transparent"></div>
+        </div>
+    </section>
+
+    <section id="concept" class="py-32 px-6 lg:px-12 bg-white overflow-hidden text-center">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+            <div class="hidden lg:block fade-in-up">
+                <h2 class="vertical-text text-2xl font-serif-jp text-stone-800 leading-loose h-[450px]">
+                    お互いに笑顔になれる、<br>そんなお店を作りたい。
+                </h2>
+            </div>
+            <div class="w-full lg:w-5/12 relative fade-in-up">
+                <div class="aspect-[4/5] overflow-hidden shadow-2xl">
+                    <img src="concept.jpg" alt="Interior" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-8 -right-8 w-full h-full border border-stone-200 -z-10"></div>
+            </div>
+            <div class="w-full lg:w-5/12 fade-in-up text-left">
+                <div class="mb-12">
+                    <p class="text-stone-400 font-elegant tracking-[0.3em] uppercase text-xs mb-2">Our Concept</p>
+                    <h2 class="text-5xl font-elegant text-stone-800 tracking-tighter">Hair Buzl</h2>
+                </div>
+                <div class="text-stone-600 leading-[2.4] font-light text-sm md:text-base text-justify space-y-8">
+                    <p>年齢とともに、髪の悩みは尽きないものです。なかなか人に話せなかったり、新しい一歩を踏み出せなかったり。</p>
+                    <p>そんな方々が、周りの目を気にせず、気軽に安心して相談できるプライベートな空間でありたいと強く思っています。</p>
+                    <p>自分らしく、楽しくライフスタイルを過ごしていただけるお手伝いをして、お互いに笑顔になれる。そんなお店を目指しています。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-20 grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="aspect-square overflow-hidden shadow-lg"><img src="photo2.jpg" alt="Photo 2" class="w-full h-full object-cover"></div>
+            <div class="aspect-square overflow-hidden shadow-lg"><img src="photo3.jpg" alt="Photo 3" class="w-full h-full object-cover"></div>
+            <div class="aspect-square overflow-hidden shadow-lg"><img src="photo4.jpg" alt="Photo 4" class="w-full h-full object-cover"></div>
+            <div class="aspect-square overflow-hidden shadow-lg"><img src="photo5.jpg" alt="Photo 5" class="w-full h-full object-cover"></div>
+            <div class="aspect-square overflow-hidden shadow-lg"><img src="photo8.jpg" alt="Photo 8" class="w-full h-full object-cover"></div>
+            <div class="aspect-square overflow-hidden shadow-lg"><img src="photo15.jpg" alt="Photo 15" class="w-full h-full object-cover"></div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-32 px-6 lg:px-12 bg-stone-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-24 fade-in-up">
+                <p class="text-stone-400 font-elegant tracking-[0.3em] uppercase text-xs mb-2">Service</p>
+                <h2 class="text-5xl font-elegant text-stone-800 tracking-wider deco-line uppercase">Menu</h2>
+                <p class="mt-12 text-[10px] text-stone-500 tracking-widest uppercase">Tax Included / 税込価格</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-x-16 gap-y-24">
+                
+                <div>
+                    <h3 class="text-2xl font-serif-jp text-stone-800 mb-8 border-b border-stone-200 pb-4">Cut <span class="text-sm font-sans text-stone-400 ml-2">カット</span></h3>
+                    <ul class="space-y-6">
+                        <li class="flex justify-between items-end">
+                            <div class="bg-stone-50 pr-4 z-10 relative"><span class="text-stone-800 font-medium">似合わせカット</span></div>
+                            <div class="menu-dot"></div>
+                            <div class="bg-stone-50 pl-4 z-10 relative"><span class="text-stone-800 font-bold">¥5,500</span></div>
+                        </li>
+                        <li class="flex justify-between items-end">
+                            <div class="bg-stone-50 pr-4 z-10 relative"><span class="text-stone-800 font-medium">前髪カット</span></div>
+                            <div class="menu-dot"></div>
+                            <div class="bg-stone-50 pl-4 z-10 relative"><span class="text-stone-800 font-bold">¥1,100</span></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-serif-jp text-stone-800 mb-8 border-b border-stone-200 pb-4">Color <span class="text-sm font-sans text-stone-400 ml-2">カラー</span></h3>
+                    <ul class="space-y-6">
+                        <li class="flex justify-between items-end">
+                            <div class="bg-stone-50 pr-4 z-10 relative"><span class="text-stone-800 font-medium">リタッチカラー</span></div>
+                            <div class="menu-dot"></div>
+                            <div class="bg-stone-50 pl-4 z-10 relative"><span class="text-stone-800 font-bold">¥6,600</span></div>
+                        </li>
+                        <li class="flex justify-between items-end">
+                            <div class="bg-stone-50 pr-4 z-10 relative"><span class="text-stone-800 font-medium">フルカラー</span></div>
+                            <div class="menu-dot"></div>
+                            <div class="bg-stone-50 pl-4 z-10 relative"><span class="text-stone-800 font-bold">¥7,700</span></div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="mt-24 text-center">
+                <p class="text-[10px] text-stone-400 tracking-[0.1em] mb-12 max-w-lg mx-auto leading-relaxed">※カラー・パーマ・矯正メニューは、髪の長さによりロング料金(¥500〜¥1,000)を頂戴する場合がございます。詳細は予約画面にてご確認ください。</p>
+                
+                <a href="https://reserve.kokoro-door.net/" class="inline-block bg-stone-800 text-white px-16 py-5 rounded-full font-bold tracking-widest hover:scale-105 transition shadow-2xl text-xs uppercase">
+                    空き状況を確認して予約する
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="stylist" class="py-32 px-6 lg:px-12 bg-white">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
+            <div class="relative w-64 h-64 shrink-0 fade-in-up">
+                <div class="absolute inset-0 border border-stone-300 rounded-full scale-110 -z-10"></div>
+                <img src="photo8.jpg" alt="Professional Tools" class="w-full h-full object-cover rounded-full shadow-2xl">
+            </div>
+            <div class="fade-in-up text-center md:text-left">
+                <p class="text-stone-400 font-elegant tracking-widest text-[11px] mb-3 uppercase">Owner Stylist</p>
+                <h3 class="text-4xl font-serif-jp text-stone-800 mb-8 tracking-widest">谷口 博哉</h3>
+                <div class="text-stone-600 font-light text-sm md:text-base leading-[2.4] space-y-6">
+                    <p>思春期の頃からクセ毛に悩んでいた経験が、美容師を志すきっかけでした。</p>
+                    <p>独自の「フルボ酸」配合技術を駆使し、髪の芯から美しく整える施術にこだわっています。旭川では希少な、ダメージを抑えた縮毛矯正をぜひ体験してください。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="access" class="py-32 px-6 lg:px-12 bg-[#f4f2f0]">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-24 fade-in-up">
                 <p class="text-stone-400 font-elegant tracking-[0.3em] uppercase text-xs mb-2">Location</p>
@@ -38,8 +268,77 @@
                     </ul>
                 </div>
                 <div class="h-[450px] w-full rounded-sm overflow-hidden shadow-inner grayscale contrast-125 hover:grayscale-0 transition duration-1000">
-                    <iframe src="https://maps.google.com/maps?q=北海道旭川市東光5条6丁目3番5号&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=北海道旭川市東光5条6丁目3番5号&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
+
+    <footer class="bg-stone-900 py-20 text-center">
+        <div class="max-w-7xl mx-auto px-6 text-white">
+            <img src="logo.png" alt="Hair Buzl" class="h-10 mx-auto mb-16 brightness-0" onerror="this.style.display='none'">
+            <div class="flex justify-center space-x-14 mb-16 text-stone-500 text-[10px] tracking-[0.4em] uppercase font-bold">
+                <a href="https://reserve.kokoro-door.net/" class="hover:text-white transition">ネット予約</a>
+                <a href="https://www.instagram.com/hair_buzl/" target="_blank" class="hover:text-white transition">Instagram</a>
+            </div>
+            <p class="text-[9px] text-stone-700 tracking-[0.5em] uppercase font-light">&copy; Hair Buzl. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="floating-btn" class="fixed bottom-8 right-8 z-40 opacity-0 translate-y-4 transition-all duration-700 pointer-events-none">
+        <a href="https://reserve.kokoro-door.net/" class="flex items-center justify-center bg-stone-800 text-white px-8 py-5 rounded-full shadow-2xl hover:scale-105 transition tracking-[0.2em] text-[10px] font-bold uppercase">
+            <i class="fa-regular fa-calendar-check mr-4 text-lg"></i> ネット予約
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+            const header = document.getElementById('header');
+            const logoImg = document.getElementById('logo-img');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navBtn = document.querySelector('.nav-btn');
+            const floatingBtn = document.getElementById('floating-btn');
+
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY > 100;
+                header.classList.toggle('bg-white/95', scrolled);
+                header.classList.toggle('shadow-sm', scrolled);
+                header.classList.toggle('py-2', scrolled);
+                header.classList.toggle('py-4', !scrolled);
+                
+                logoImg.classList.toggle('invert', scrolled);
+
+                navLinks.forEach(link => {
+                    link.classList.toggle('text-stone-600', scrolled);
+                    link.classList.toggle('text-white', !scrolled);
+                });
+                navBtn.classList.toggle('border-stone-800', scrolled);
+                navBtn.classList.toggle('text-stone-800', scrolled);
+                navBtn.classList.toggle('border-white', !scrolled);
+                navBtn.classList.toggle('text-white', !scrolled);
+                floatingBtn.classList.toggle('opacity-0', !scrolled);
+                floatingBtn.classList.toggle('translate-y-4', !scrolled);
+                floatingBtn.classList.toggle('pointer-events-none', !scrolled);
+            });
+
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeBtn = document.getElementById('mobile-close-btn');
+
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => mobileMenu.classList.remove('opacity-0'), 10);
+            });
+            closeBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('opacity-0');
+                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+            });
+        });
+    </script>
+</body>
+</html>
